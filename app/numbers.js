@@ -2,18 +2,23 @@ exports = typeof window === 'undefined' ? global : window;
 
 exports.numbersAnswers = {
   valueAtBit: function(num, bit) {
+  		return (num>>(bit-1))&1
+  		
 
   },
 
   base10: function(str) {
-
+  		return parseInt(str,2);
   },
 
   convertToBinary: function(num) {
-
+  		return ("000000000" + num.toString(2)).substr(-8)
   },
 
   multiply: function(a, b) {
-
+		 var common = 1000000;
+		    a *= common;
+		    b *= common;
+		    return (a * b) / (common * common)
   }
 };
